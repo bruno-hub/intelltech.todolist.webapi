@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using DesafioIntelltech.Models;
 
@@ -17,13 +16,13 @@ namespace DesafioIntelltech.Controllers
             new Atividade(3, "Almoçar", "Ir almoçar em algum lugar", "16/02/2017", "12:00", 2)
         };
         
-        // /api/atividades
+        // /api/atividade
         public IEnumerable<Atividade> GetAllAtividades()
         {
             return atividades;
         }
 
-        // /api/atividades/?id
+        // /api/atividade/?id
         public IHttpActionResult GetAtividade(int id)
         {
             var atividade = atividades.FirstOrDefault((a) => a.id == id);
