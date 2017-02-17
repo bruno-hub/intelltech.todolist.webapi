@@ -8,10 +8,10 @@ namespace DesafioIntelltech.Models
     public class Atividade
     {
         public int id { get; set; }
-        private string titulo { get; set; }
-        private string descricao { get; set; }
-        private string data { get; set; }
-        private string horario { get; set; }
+        public string titulo { get; set; }
+        public string descricao { get; set; }
+        public string data { get; set; }
+        public string horario { get; set; }
 
         private int posSituacao = 0;
         private string[] situacao = { "Não iniciada", "Em andamento", "Concluída" };
