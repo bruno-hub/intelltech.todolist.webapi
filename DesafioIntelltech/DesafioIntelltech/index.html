@@ -1,53 +1,71 @@
 ﻿<!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Desafio IntellTech</title>
-    <meta charset="utf-8" />
+	<title>Desafio IntellTech</title>
+	<meta charset="utf-8" />
 </head>
 <body>
-    <div>
-        <h2>Todas as atividades</h2>
-        <ul id="atividades" />
-    </div>
-    <div>
-        <h2>Buscar por ID</h2>
-        <input type="text" id="idAtiv" size="5" />
-        <input type="button" value="Buscar" onclick="find();" />
-        <p id="atividade" />
-    </div>
+	<div>
+		<h2>Todas as atividades</h2>
+		<table id="atividades">
+			<tr>
+				<td>id</td>
+				<td>titulo</td>
+				<td>descricao</td>
+				<td>data</td>
+				<td>horario</td>
+				<td>situacao</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		<h2>Buscar por ID</h2>
+		<input type="text" id="idAtiv" size="5" />
+		<input type="button" value="Buscar" onclick="find();" />
+		<p id="atividade" />
+	</div>
 
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-    <script>
-    var uri = 'api/atividade';
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+	<script>
+		var uri = 'api/atividade';
 
-    $(document).ready(function () {
-      // Send an AJAX request
-      $.getJSON(uri)
-          .done(function (data) {
-            // On success, 'data' contains a list of products.
-            $.each(data, function (key, item) {
-              // Add a list item for the product.
-              $('<li>', { text: formatar(item) }).appendTo($('#atividades'));
-            });
-          });
-    });
+		$(document).ready(function () {
+			// Send an AJAX request
+			$.getJSON(uri)
+				.done(function (data) {
+					// On success, 'data' contains a list of products.
+					$.each(data, function (key, item) {
+						// Add a list item for the product.
+						var linha = "<tr>" +
+							"<td>" + item.id + "</td>" +
+							"<td>" + item.titulo + "</td>" +
+							"<td>" + item.descricao + "</td>" +
+							"<td>" + item.data + "</td>" +
+							"<td>" + item.horario + "</td>" +
+							"<td>" + item.situacao + "</td></tr>";
+						console.log($("#atividades.atividade"));
+						$("#atividades").append($(linha));
+						//$('<td>', { text: formatar(item) }).appendTo($('#atividades.atividade'));
+					});
+				});
+		});
 
-    function formatar(item) {
-      return item.id + ' | ' + item.titulo + " | " + item.descricao + " | " + item.data + " | " + item.horario;
-    }
+		function formatar(item) {
+			return item.id + ' | ' + item.titulo + " | " + item.descricao + " | " + item.data + " | " + item.horario + " | " + item.situacao;
+		}
 
-    function find() {
-      var id = $('#idAtiv').val();
-      $.getJSON(uri + '/' + id)
-          .done(function (data) {
-              console.log(data);
-              console.log($("#atividade"));
-              $('#atividade').text(formatar(data));
-          })
-          .fail(function (jqXHR, textStatus, err) {
-            $('#atividade').text('Erro: ' + err);
-          });
-    }
-    </script>
+		function find() {
+			var id = $('#idAtiv').val();
+			$.getJSON(uri + '/' + id)
+					.done(function (data) {
+					console.log(data);
+					console.log($("#atividade"));
+					$('#atividade').text(formatar(data));
+				})
+				.fail(function (jqXHR, textStatus, err) {
+					$('#atividade').text('Erro: ' + err);
+				});
+		}
+	</script>
 </body>
 </html>
