@@ -1,10 +1,13 @@
 ﻿<!DOCTYPE html>
-<html lang="pt" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
 <head>
 	<title>Desafio IntellTech</title>
 	<meta charset="utf-8" />
+	<script src="/Resources/bower_components/angular/angular.js" type="text/javascript"></script>
+	<script src="/Resources/js/app.js" type="text/javascript"></script>
+	<script src="/Resources/js/main.controller.js" type="text/javascript"></script>
 </head>
-<body>
+<body ng-controller="MainController as main">
 	<div>
 		<h2>Todas as atividades</h2>
 		<table id="atividades">
@@ -16,56 +19,21 @@
 				<td>horario</td>
 				<td>situacao</td>
 			</tr>
+			<tr ng-repeat="atividade in main.atividades">
+				<td>{{atividade.Id}}</td>
+				<td>{{atividade.Titulo}}</td>
+				<td>{{atividade.Descricao}}</td>
+				<td>{{atividade.Data}}</td>
+				<td>{{atividade.Horario}}</td>
+				<td>{{atividade.Situacao}}</td>
+			</tr>
 		</table>
 	</div>
 	<div>
-		<h2>Buscar por ID</h2>
-		<input type="text" id="idAtiv" size="5" />
-		<input type="button" value="Buscar" onclick="find();" />
-		<p id="atividade" />
+		<h2>Buscar por ID: {{ main.search }}</h2>
+		<input type="text" id="idAtiv" size="5" ng-model="main.search" />
+		<input type="button" value="Buscar" ng-click="main.find(main.search);"/>
+		<p>{{ main.atividade | json }}</p>
 	</div>
-
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
-	<script>
-		var uri = 'api/atividade';
-
-		$(document).ready(function () {
-			// Send an AJAX request
-			$.getJSON(uri)
-				.done(function (data) {
-					// On success, 'data' contains a list of products.
-					$.each(data, function (key, item) {
-						// Add a list item for the product.
-						var linha = "<tr>" +
-							"<td>" + item.id + "</td>" +
-							"<td>" + item.titulo + "</td>" +
-							"<td>" + item.descricao + "</td>" +
-							"<td>" + item.data + "</td>" +
-							"<td>" + item.horario + "</td>" +
-							"<td>" + item.situacao + "</td></tr>";
-						console.log($("#atividades.atividade"));
-						$("#atividades").append($(linha));
-						//$('<td>', { text: formatar(item) }).appendTo($('#atividades.atividade'));
-					});
-				});
-		});
-
-		function formatar(item) {
-			return item.id + ' | ' + item.titulo + " | " + item.descricao + " | " + item.data + " | " + item.horario + " | " + item.situacao;
-		}
-
-		function find() {
-			var id = $('#idAtiv').val();
-			$.getJSON(uri + '/' + id)
-					.done(function (data) {
-					console.log(data);
-					console.log($("#atividade"));
-					$('#atividade').text(formatar(data));
-				})
-				.fail(function (jqXHR, textStatus, err) {
-					$('#atividade').text('Erro: ' + err);
-				});
-		}
-	</script>
 </body>
 </html>

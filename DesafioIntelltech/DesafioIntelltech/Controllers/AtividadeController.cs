@@ -9,7 +9,7 @@ namespace DesafioIntelltech.Controllers
 {
 	public class AtividadeController : ApiController
 	{
-		Atividade[] atividades = new Atividade[]
+		Atividade[] Atividades = new Atividade[]
 		{
 			new Atividade(1, "Aprender C#", "Estudar a sintaxe", "16/02/2017", "09:00", 1),
 			new Atividade(2, "Pensar em C#", "Aprender datas em C#", "16/02/2017", "10:00", 0),
@@ -19,13 +19,13 @@ namespace DesafioIntelltech.Controllers
 		// /api/atividade
 		public IEnumerable<Atividade> GetAllAtividades()
 		{
-			return atividades;
+			return Atividades;
 		}
 
 		// /api/atividade/?id
-		public IHttpActionResult GetAtividade(int id)
+		public IHttpActionResult GetAtividade(int Id)
 		{
-			var atividade = atividades.FirstOrDefault((a) => a.id == id);
+			var atividade = Atividades.FirstOrDefault((a) => a.Id == Id);
 			Console.WriteLine(atividade);
 			if (atividade == null)
 				return NotFound();
@@ -33,10 +33,10 @@ namespace DesafioIntelltech.Controllers
 			return Ok(atividade);
 		}
 
-		public IEnumerable<Atividade> GetAtividadesPorSituacao(string situacao)
+		public IEnumerable<Atividade> GetAtividadesPorSituacao(string Situacao)
 		{
-			return atividades.Where(
-				(p) => string.Equals(p.getSituacao(), situacao,
+			return Atividades.Where(
+				(p) => string.Equals(p.getSituacao(), Situacao,
 					StringComparison.OrdinalIgnoreCase));
 		}
 	}

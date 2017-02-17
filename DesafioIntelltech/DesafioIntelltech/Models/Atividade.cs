@@ -7,33 +7,33 @@ namespace DesafioIntelltech.Models
 {
 	public class Atividade
 	{
-		public int id { get; set; }
-		public string titulo { get; set; }
-		public string descricao { get; set; }
-		public string data { get; set; }
-		public string horario { get; set; }
+		public int Id { get; set; }
+		public string Titulo { get; set; }
+		public string Descricao { get; set; }
+		public string Data { get; set; }
+		public string Horario { get; set; }
 
-		private int posSituacao = 0;
-		private string[] situacao = { "Não iniciada", "Em andamento", "Concluída" };
+		private int PosSituacao = 0;
+		private string[] Situacao = { "Não iniciada", "Em andamento", "Concluída" };
 
-		public Atividade(int id, string titulo, string descricao, string data, string horario, int posSituacao)
+		public Atividade(int Id, string Titulo, string Descricao, string Data, string Horario, int PosSituacao)
 		{
-			this.id = id;
-			this.titulo = titulo;
-			this.descricao = descricao;
-			this.data = data;
-			this.horario = horario;
-			this.posSituacao = posSituacao;
+			this.Id = Id;
+			this.Titulo = Titulo;
+			this.Descricao = Descricao;
+			this.Data = Data;
+			this.Horario = Horario;
+			this.PosSituacao = PosSituacao;
 		}
 
 		public string getSituacao()
 		{
-			return this.situacao[posSituacao];
+			return this.Situacao[PosSituacao];
 		}
 		
-		public void setSituacao(int posSituacao)
+		public void setSituacao(int PosSituacao)
 		{
-			this.posSituacao = posSituacao;
+			this.PosSituacao = PosSituacao;
 		}
 	}
 }
