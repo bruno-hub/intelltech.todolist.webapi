@@ -1,0 +1,15 @@
+{
+  "name": "intelltech.todolist.webapi",
+  "homepage": "https://github.com/bruno-hub/intelltech.todolist.webapi",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
