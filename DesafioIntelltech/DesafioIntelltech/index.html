@@ -4,36 +4,62 @@
 	<title>Desafio IntellTech</title>
 	<meta charset="utf-8" />
 	<script src="/Resources/bower_components/angular/angular.js" type="text/javascript"></script>
+	<script src="/Resources/bower_components/angular-animate/angular-animate.js" type="text/javascript"></script>
+	<script src="/Resources/bower_components/angular-aria/angular-aria.js" type="text/javascript"></script>
+	<script src="/Resources/bower_components/angular-messages/angular-messages.js" type="text/javascript"></script>
+	<script src="/Resources/bower_components/angular-material/angular-material.js" type="text/javascript"></script>
+	<!-- https://github.com/daniel-nagy/md-data-table -->
+	<script src="/Resources/bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/Resources/bower_components/angular-material/angular-material.css" />
+	<link rel="stylesheet" type="text/css" href="/Resources/bower_components/angular-material-data-table/dist/md-data-table.min.css" />
 	<script src="/Resources/js/app.js" type="text/javascript"></script>
 	<script src="/Resources/js/main.controller.js" type="text/javascript"></script>
 </head>
 <body ng-controller="MainController as main">
 	<div>
-		<h2>Todas as atividades</h2>
-		<table id="atividades">
-			<tr>
-				<td>id</td>
-				<td>titulo</td>
-				<td>descricao</td>
-				<td>data</td>
-				<td>horario</td>
-				<td>situacao</td>
-			</tr>
-			<tr ng-repeat="atividade in main.atividades">
-				<td>{{atividade.Id}}</td>
-				<td>{{atividade.Titulo}}</td>
-				<td>{{atividade.Descricao}}</td>
-				<td>{{atividade.Data}}</td>
-				<td>{{atividade.Horario}}</td>
-				<td>{{atividade.Situacao}}</td>
-			</tr>
-		</table>
+		<md-toolbar class="md-table-toolbar md-default">
+			<div class="md-toolbar-tools">
+				<span>Todas as atividades</span>
+			</div>
+		</md-toolbar>
+
+		<md-table-container>
+			<table md-table>
+			<thead md-head>
+				<tr md-row>
+					<th md-column>id</th>
+					<th md-column>titulo</th>
+					<th md-column>descricao</th>
+					<th md-column>data</th>
+					<th md-column>horario</th>
+					<th md-column>situacao</th>
+				</tr>
+			</thead>
+			<tbody md-body>
+				<tr md-row ng-repeat="atividade in main.atividades">
+					<td md-cell>{{ atividade.Id }}</td>
+					<td md-cell>{{ atividade.Titulo }}</td>
+					<td md-cell>{{ atividade.Descricao }}</td>
+					<td md-cell>{{ atividade.Data }}</td>
+					<td md-cell>{{ atividade.Horario }}</td>
+					<td md-cell>
+						<md-select layout-align="center center" placeholder="Situação" ng-model="main.user" md-on-open="main.loadUsers()" style="min-width: 200px;">
+							<md-option ng-value="atividade" ng-repeat="user in main.users">{{ atividade.getSituacao() }}</md-option>
+						</md-select>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+		</md-table-container>
 	</div>
+
 	<div>
 		<h2>Buscar por ID: {{ main.search }}</h2>
 		<input type="text" id="idAtiv" size="5" ng-model="main.search" />
-		<input type="button" value="Buscar" ng-click="main.find(main.search);"/>
+		<input type="button" value="Buscar" ng-click="main.find(main.search);" />
 		<p>{{ main.atividade | json }}</p>
 	</div>
+
+	
 </body>
 </html>

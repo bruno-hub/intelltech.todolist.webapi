@@ -14,7 +14,7 @@ namespace DesafioIntelltech.Models
 		public string Horario { get; set; }
 
 		private int PosSituacao = 0;
-		private string[] Situacao = { "Não iniciada", "Em andamento", "Concluída" };
+		public static string[] Situacao = { "Não iniciada", "Em andamento", "Concluída" };
 
 		public Atividade(int Id, string Titulo, string Descricao, string Data, string Horario, int PosSituacao)
 		{
@@ -28,7 +28,7 @@ namespace DesafioIntelltech.Models
 
 		public string getSituacao()
 		{
-			return this.Situacao[PosSituacao];
+			return Situacao[PosSituacao];
 		}
 		
 		public void setSituacao(int PosSituacao)
