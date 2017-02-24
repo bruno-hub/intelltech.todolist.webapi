@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Web.Http;
 using DesafioIntelltech.Models;
+using System.IO;
+using DesafioIntelltech.App_Start;
 
 namespace DesafioIntelltech.Controllers
 {
 	public class AtividadeController : ApiController
 	{
+		private DatabaseContext db = new DatabaseContext();
+
 		Atividade[] Atividades = new Atividade[]
 		{
 			new Atividade(1, "Aprender C#", "Estudar a sintaxe", "16/02/2017", "09:00", 1),
@@ -19,14 +22,15 @@ namespace DesafioIntelltech.Controllers
 		// /api/atividade
 		public IEnumerable<Atividade> GetAllAtividades()
 		{
-			return Atividades;
+			return db.Atividade;
 		}
+		
 
 		// /api/atividade/?id
 		public IHttpActionResult GetAtividade(int Id)
 		{
 			var atividade = Atividades.FirstOrDefault((a) => a.Id == Id);
-			Console.WriteLine(atividade);
+			
 			if (atividade == null)
 				return NotFound();
 

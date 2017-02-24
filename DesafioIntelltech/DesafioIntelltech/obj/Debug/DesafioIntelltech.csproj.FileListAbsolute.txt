@@ -1,4 +1,3 @@
-C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.csprojResolveAssemblyReference.cache
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\ApplicationInsights.config
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\roslyn\csc.exe
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -15,6 +14,9 @@ C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioInt
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\DesafioIntelltech.dll.config
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\DesafioIntelltech.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\DesafioIntelltech.pdb
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\EntityFramework.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\EntityFramework.SqlServer.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Google.Protobuf.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.AI.Agent.Intercept.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.AI.DependencyCollector.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -25,8 +27,12 @@ C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioInt
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Newtonsoft.Json.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Net.Http.Formatting.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Web.Http.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Web.Http.WebHost.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\EntityFramework.xml
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\EntityFramework.SqlServer.xml
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Google.Protobuf.xml
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.AI.DependencyCollector.xml
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.AI.Web.xml
@@ -39,3 +45,6 @@ C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioInt
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Web.Http.WebHost.xml
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.pdb
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\MySql.Data.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.csprojResolveAssemblyReference.cache
