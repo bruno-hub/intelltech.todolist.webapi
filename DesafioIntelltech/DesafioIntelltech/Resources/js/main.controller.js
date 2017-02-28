@@ -11,8 +11,8 @@
 			main.atividade = "";
 			main.search = "";
 			main.find = function(id) {
-				$log.debug(main.search);
-
+				//$log.debug(main.search);
+				
 				$http.get('api/atividade/' + id).then(function (response) { //if success
 					main.atividade = response.data;
 				}, function (response) { //else (if failure)
@@ -23,25 +23,20 @@
 			main.atividades = [];
 			$http.get('api/atividade').then(function (response) {
 				main.atividades = response.data;
+				$log.debug(main.atividades);
 			}, function (response) {
 
 			});
 
 			//----------------------------------------
 
-			main.people = [
-			  { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
-			  { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
-			  { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false }
-			];
-
 			main.doSecondaryAction = function (event) {
 				$mdDialog.show(
 				  $mdDialog.alert()
-					.title('Secondary Action')
-					.textContent('Secondary actions can be used for one click actions')
-					.ariaLabel('Secondary click demo')
-					.ok('Neat!')
+					.title('Ação Secundária')
+					.textContent('Ações secundárias podem ser usadas em ações de um clique')
+					.ariaLabel('Demo de clique secundário')
+					.ok('Bacana!')
 					.targetEvent(event)
 				);
 			};

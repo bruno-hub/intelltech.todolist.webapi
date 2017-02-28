@@ -30,23 +30,21 @@
 					<th md-column>id</th>
 					<th md-column>titulo</th>
 					<th md-column>descricao</th>
-					<th md-column>data</th>
-					<th md-column>horario</th>
-					<th md-column>situacao</th>
+					<th md-column>dataHora</th>
+					<!--<th md-column>situacao</th>-->
 				</tr>
 			</thead>
 			<tbody md-body>
 				<tr md-row ng-repeat="atividade in main.atividades">
-					<td md-cell>{{ atividade.Id }}</td>
-					<td md-cell>{{ atividade.Titulo }}</td>
-					<td md-cell>{{ atividade.Descricao }}</td>
-					<td md-cell>{{ atividade.Data }}</td>
-					<td md-cell>{{ atividade.Horario }}</td>
-					<td md-cell>
+					<td md-cell>{{ atividade.id }}</td>
+					<td md-cell>{{ atividade.titulo }}</td>
+					<td md-cell>{{ atividade.descricao }}</td>
+					<td md-cell>{{ atividade.dataHora }}</td>
+					<!--<td md-cell>
 						<md-select layout-align="center center" placeholder="Situação" ng-model="main.user" md-on-open="main.loadUsers()" style="min-width: 200px;">
 							<md-option ng-value="atividade" ng-repeat="user in main.users">{{ atividade.getSituacao() }}</md-option>
 						</md-select>
-					</td>
+					</td>-->
 				</tr>
 			</tbody>
 			</table>
