@@ -47,4 +47,16 @@ C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioInt
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.pdb
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\MySql.Data.dll
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\MySql.Data.Entity.EF6.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.Extensions.Logging.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Npgsql.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.Extensions.Logging.xml
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\Npgsql.xml
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.csprojResolveAssemblyReference.cache
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.Migrations.Initial.resources
+C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.csproj.GenerateResource.Cache
