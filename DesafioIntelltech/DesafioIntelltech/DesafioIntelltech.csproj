@@ -173,6 +173,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="panel.tmpl.html" />
     <Content Include="ReleaseNotes.txt" />
     <Content Include="Resources\bower_components\angular-animate\angular-animate.js" />
     <Content Include="Resources\bower_components\angular-animate\angular-animate.min.js" />
@@ -667,6 +668,7 @@
     <Content Include="Resources\bower_components\angular\index.js" />
     <Content Include="Resources\js\app.js" />
     <Content Include="Resources\js\main.controller.js" />
+    <Content Include="Resources\icons\ic_more_horiz_black_24px.svg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

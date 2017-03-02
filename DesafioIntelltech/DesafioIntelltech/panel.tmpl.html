@@ -1,0 +1,43 @@
+﻿<div role="dialog" style="background-color: #FFF; width: 150%;" aria-label="Edição" layout="column" layout-align="center center">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2>{{ctrl.acao}} de Atividade</h2>
+		</div>
+	</md-toolbar>
+
+	<div class="demo-dialog-content">
+		<md-table-container>
+			<table md-table>
+			<tr md-row>
+				<td md-cell>Título:</td>
+				<td md-cell>
+					<md-input-container md-no-float class="md-block">
+						<input type="text" ng-model="ctrl.atividade.titulo" value="{{ctrl.atividade.titulo}}" />
+					</md-input-container>
+				</td>
+			</tr>
+			<tr md-row>
+				<td md-cell>Descrição:</td>
+				<td md-cell>
+					<md-input-container md-no-float class="md-block">
+						<input type="text" ng-model="ctrl.atividade.descricao" value="{{ctrl.atividade.descricao}}" />
+					</md-input-container>
+				</td>
+			</tr>
+			<!--<tr md-row>
+				<td md-cell>Situação</td>
+				<td md-cell></td>
+			</tr>-->
+			</table>
+		</md-table-container>
+	</div>
+
+	<div layout="row" class="demo-dialog-button">
+		<md-button md-autofocus class="md-raised" ng-click="ctrl.salvar()">
+			Salvar
+		</md-button>
+		<md-button md-autofocus class="md-primary" ng-click="ctrl.closeDialog()">
+			Fechar
+		</md-button>
+	</div>
+</div>
