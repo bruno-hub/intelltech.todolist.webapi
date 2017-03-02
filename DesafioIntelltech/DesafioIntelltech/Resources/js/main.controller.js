@@ -66,7 +66,7 @@
 			main.atividade = {};
 			main.editar = function (atividade) {
 				//$http.get('api/atividade/' + id).then(function (response) { //if success
-				main.atividade = atividade;
+				main.atividade = angular.copy(atividade);
 				main.acao = "Edição";
 
 				abrirPanel();
@@ -113,6 +113,8 @@
 							angular.element(document.querySelector('.demo-dialog-open-button')).focus();
 							panelRef.destroy();
 						});
+
+						todos();
 					}, function (response) {
 
 					});

@@ -14,11 +14,11 @@ namespace DesafioIntelltech
 			// Web API routes
 			config.MapHttpAttributeRoutes();
 
-			config.Routes.MapHttpRoute(
-				name: "DefaultApi",
-				routeTemplate: "api/{controller}/{id}",
-				defaults: new { id = RouteParameter.Optional }
-			);
+			//config.Routes.MapHttpRoute(
+			//	name: "DefaultApi",
+			//	routeTemplate: "api/{controller}/{id}",
+			//	defaults: new { id = RouteParameter.Optional }
+			//);
 
 			config.Formatters.Remove(config.Formatters.XmlFormatter); //Remove o formatador antigo
 			//Cria o novo

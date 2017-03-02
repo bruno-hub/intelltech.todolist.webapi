@@ -13,18 +13,22 @@ using DesafioIntelltech.Models;
 
 namespace DesafioIntelltech.Controllers
 {
+	[RoutePrefix("api/atividade")]
 	public class AtividadeController : ApiController
 	{
 		private DatabaseContext db = new DatabaseContext();
 
+		[HttpGet]
+		[Route("")]
 		// GET: api/Atividade
 		public IQueryable<Atividade> GetAtividade()
 		{
 			return db.Atividade;
 		}
 
+		[HttpGet]
+		[Route("{id}")]
 		// GET: api/Atividade/5
-		[ResponseType(typeof(Atividade))]
 		public IHttpActionResult GetAtividade(long id)
 		{
 			Atividade atividade = db.Atividade.Find(id);
@@ -36,8 +40,9 @@ namespace DesafioIntelltech.Controllers
 			return Ok(atividade);
 		}
 
+		[HttpPut]
+		[Route("{id}")]
 		// PUT: api/Atividade/5
-		[ResponseType(typeof(void))]
 		public IHttpActionResult PutAtividade(long id, Atividade atividade)
 		{
 			if (!ModelState.IsValid)
@@ -71,23 +76,44 @@ namespace DesafioIntelltech.Controllers
 			return StatusCode(HttpStatusCode.NoContent);
 		}
 
-		// POST: api/Atividade
-		[ResponseType(typeof(Atividade))]
+		[HttpPost]
+		[Route("")]
+		//POST: api/Atividade
 		public IHttpActionResult PostAtividade(Atividade atividade)
 		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
+			//if (!ModelState.IsValid)
+			//{
+			//	return BadRequest(ModelState);
+			//}
 
 			db.Atividade.Add(atividade);
 			db.SaveChanges();
 
-			return CreatedAtRoute("DefaultApi", new { id = atividade.Id }, atividade);
+			return Ok(atividade);
 		}
 
+		[HttpPost]
+		[Route("sync")]
+		// POST: api/Atividade/sync
+		public IHttpActionResult PostAtividade(List<Atividade> atividades)
+		{
+			//if (!ModelState.IsValid)
+			//{
+			//	return BadRequest(ModelState);
+			//}
+
+			for (int c = 0; c < atividades.Count; c++)
+			{
+				db.Atividade.Add(atividades[c]);
+			}
+			db.SaveChanges();
+
+			return Ok(atividades);
+		}
+
+		[HttpDelete]
+		[Route("{id}")]
 		// DELETE: api/Atividade/5
-		[ResponseType(typeof(Atividade))]
 		public IHttpActionResult DeleteAtividade(long id)
 		{
 			Atividade atividade = db.Atividade.Find(id);
