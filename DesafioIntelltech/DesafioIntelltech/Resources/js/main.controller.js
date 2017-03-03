@@ -1,104 +1,111 @@
 ﻿(function () {
 	'use strict';
 
-	angular.module('app.MainController', [])
-		.controller('MainController', function ($scope, $log, $timeout, $http, $mdPanel) {
+angular.module('app.MainController', [])
+	.controller('MainController', function ($scope, $log, $timeout, $http, $mdPanel) {
 
-			var main = this;
+		var vm = this;
 
-			//$log.debug('eteste');
+		//$log.debug('eteste');
 
-			//------------------------------------ Listar
-			main.atividades = [];
-			main.todos = todos;
-			function todos() {
-				$http.get('api/atividade').then(function (response) {
-					main.atividades = response.data;
-				}, function (response) {
+		//------------------------------------ Listar
+		vm.atividades = [];
+		vm.todos = todos;
+		function todos() {
+			$http.get('api/atividade').then(function (response) {
+				vm.atividades = response.data;
+			}, function (response) {
 
+			});
+		}
+
+		//------------------------------------ Buscar
+		vm.search = "";
+		vm.find = function (id) {
+			if (id != "") {
+				$http.get('api/atividade/' + id).then(function (response) { //if success
+					vm.atividades = [];
+					vm.atividades[0] = response.data;
+				}, function (response) { //else (if failure)
+					alert("Não encontrado");
 				});
 			}
+		}
 
-			//------------------------------------ Buscar
-			main.search = "";
-			main.find = function (id) {
-				if (id != "") {
-					$http.get('api/atividade/' + id).then(function (response) { //if success
-						main.atividades = [];
-						main.atividades[0] = response.data;
-					}, function (response) { //else (if failure)
-						alert("Não encontrado");
-					});
-				}
-			}
+		//------------------------------------- Cadastrar
+		vm.acao = "";
 
-			//------------------------------------- Cadastrar
-			main.acao = "";
+		function abrirPanel() {
+			var position = $mdPanel.newPanelPosition().absolute().center();
+			var config = {
+				attachTo: angular.element(document.body),
+				controller: PanelDialogCtrl,
+				controllerAs: 'ctrl',
+				disableParentScroll: true,
+				templateUrl: 'panel.tmpl.html',
+				hasBackdrop: true,
+				panelClass: 'demo-dialog-example',
+				position: position,
+				trapFocus: true,
+				zIndex: 150,
+				clickOutsideToClose: true,
+				escapeToClose: true,
+				focusOnOpen: true
+			};
 
-			function abrirPanel() {
-				var position = $mdPanel.newPanelPosition().absolute().center();
-				var config = {
-					attachTo: angular.element(document.body),
-					controller: PanelDialogCtrl,
-					controllerAs: 'ctrl',
-					disableParentScroll: true,
-					templateUrl: 'panel.tmpl.html',
-					hasBackdrop: true,
-					panelClass: 'demo-dialog-example',
-					position: position,
-					trapFocus: true,
-					zIndex: 150,
-					clickOutsideToClose: true,
-					escapeToClose: true,
-					focusOnOpen: true
-				};
+			$mdPanel.open(config);
+		}
 
-				$mdPanel.open(config);
-			}
+		vm.cadastrar = function () {
+			vm.acao = "Cadastro";
 
-			main.cadastrar = function () {
-				main.acao = "Cadastro";
+			abrirPanel();
+		}
 
-				abrirPanel();
-			}
+		//------------------------------------- Editar
+		vm.atividade = {};
+		vm.editar = function (atividade) {
+			//$http.get('api/atividade/' + id).then(function (response) { //if success
+			vm.atividade = angular.copy(atividade);
+			vm.acao = "Edição";
 
-			//------------------------------------- Editar
-			main.atividade = {};
-			main.editar = function (atividade) {
-				//$http.get('api/atividade/' + id).then(function (response) { //if success
-				main.atividade = angular.copy(atividade);
-				main.acao = "Edição";
+			abrirPanel();
+			//}, function (response) { });
+		}
 
-				abrirPanel();
-				//}, function (response) { });
-			}
+		function PanelDialogCtrl(mdPanelRef) {
+			var ctrl = PanelDialogCtrl.prototype;
 
-			function PanelDialogCtrl(mdPanelRef) {
-				var ctrl = PanelDialogCtrl.prototype;
+			ctrl.acao = vm.acao;
+			ctrl.atividade = vm.atividade;
 
-				ctrl.acao = main.acao;
-				ctrl.atividade = main.atividade;
+			this._mdPanelRef = mdPanelRef;
+		}
 
-				this._mdPanelRef = mdPanelRef;
-			}
-
-			PanelDialogCtrl.prototype.closeDialog = function () {
-				var panelRef = this._mdPanelRef;
+		PanelDialogCtrl.prototype.closeDialog = function () {
+			var panelRef = this._mdPanelRef;
 				
-				panelRef && panelRef.close().then(function () {
-					angular.element(document.querySelector('.demo-dialog-open-button')).focus();
-					panelRef.destroy();
-				});
+			panelRef && panelRef.close().then(function () {
+				angular.element(document.querySelector('.demo-dialog-open-button')).focus();
+				panelRef.destroy();
+			});
 
-				main.atividade = {};
-			}
+			vm.atividade = {};
+		}
 
-			PanelDialogCtrl.prototype.salvar = function () {
-				var atividade = PanelDialogCtrl.prototype.atividade;
+		PanelDialogCtrl.prototype.salvar = function () {
+			var atividade = PanelDialogCtrl.prototype.atividade;
 
+			if (atividade.titulo == "") {
+				alert("Título inválido");
+				return false;
+			} else if (atividade.descricao == "") {
+				alert("Descrição inválida");
+				return false;
+			} else {
 				var panelRef = this._mdPanelRef;
-				
-				if (main.acao == "Cadastro") {
+
+				if (vm.acao == "Cadastro") {
 					$http.post("/api/atividade", atividade).then(function (response) {
 						panelRef && panelRef.close().then(function () {
 							angular.element(document.querySelector('.demo-dialog-open-button')).focus();
@@ -120,50 +127,51 @@
 					});
 				}
 
-				main.atividade = {};
+				vm.atividade = {};
 			}
+		}
 
-			//------------------------------------ Excluir
-			main.excluir = function (id) {
-				$http.delete("/api/atividade/" + id).then(function (response) {
-					todos();
-				}, function (response) {
+		//------------------------------------ Excluir
+		vm.excluir = function (id) {
+			$http.delete("/api/atividade/" + id).then(function (response) {
+				todos();
+			}, function (response) {
 
-				});
+			});
 
-			}
+		}
 
-			//----------------------------------------
+		//----------------------------------------
 
-			main.doSecondaryAction = function (event) {
-				$mdDialog.show(
-				  $mdDialog.alert()
-					.title('Ação Secundária')
-					.textContent('Ações secundárias podem ser usadas em ações de um clique')
-					.ariaLabel('Demo de clique secundário')
-					.ok('Bacana!')
-					.targetEvent(event)
-				);
-			};
+		vm.doSecondaryAction = function (event) {
+			$mdDialog.show(
+				$mdDialog.alert()
+				.title('Ação Secundária')
+				.textContent('Ações secundárias podem ser usadas em ações de um clique')
+				.ariaLabel('Demo de clique secundário')
+				.ok('Bacana!')
+				.targetEvent(event)
+			);
+		};
 
-			main.user = null;
-			main.users = null;
+		vm.user = null;
+		vm.users = null;
 
-			main.loadUsers = function () {
+		vm.loadUsers = function () {
 
-				// Use timeout to simulate a 650ms request.
-				return $timeout(function () {
+			// Use timeout to simulate a 650ms request.
+			return $timeout(function () {
 
-					main.users = main.users || [
-					  { id: 1, name: 'Não iniciada' },
-					  { id: 2, name: 'Em andamento' },
-					  { id: 3, name: 'Concluída' },
-					];
+				vm.users = vm.users || [
+					{ id: 1, name: 'Não iniciada' },
+					{ id: 2, name: 'Em andamento' },
+					{ id: 3, name: 'Concluída' },
+				];
 
-				}, 650);
-			};
+			}, 650);
+		};
 
-			//Métodos da primeira execução
-			todos();
-		});
+		//Métodos da primeira execução
+		todos();
+	});
 })();

@@ -8,13 +8,16 @@
 	<script src="/Resources/bower_components/angular-aria/angular-aria.js" type="text/javascript"></script>
 	<script src="/Resources/bower_components/angular-messages/angular-messages.js" type="text/javascript"></script>
 	<script src="/Resources/bower_components/angular-material/angular-material.js" type="text/javascript"></script>
-	<script src="/Resources/bower_components/angular-route/angular-route.js" type="text/javascript"></script>
+	<!-- https://github.com/alenaksu/mdPickers -->
+	<script src="/Resources/bower_components/mdPickers/dist/mdPickers.js" type="text/javascript"></script>
+	<script src="/Resources/bower_components/moment/moment.js" type="text/javascript"></script>
 	<!-- https://github.com/daniel-nagy/md-data-table -->
 	<script src="/Resources/bower_components/angular-material-data-table/dist/md-data-table.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/Resources/bower_components/angular-material/angular-material.css" />
 	<link rel="stylesheet" type="text/css" href="/Resources/bower_components/angular-material-data-table/dist/md-data-table.min.css" />
 	<script src="/Resources/js/app.js" type="text/javascript"></script>
 	<script src="/Resources/js/main.controller.js" type="text/javascript"></script>
+	<script src="/Resources/js/email.controller.js" type="text/javascript"></script>
 </head>
 <body ng-controller="MainController as main">
 	<div>
@@ -88,6 +91,15 @@
 		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
 			<md-button class="md-primary md-fab" style="font-size: larger;" ng-click="main.cadastrar()">+</md-button>
 		</section>
+
+		<div ng-controller="EmailController as emailC">
+			<section layout="column" layout-align="center center" layout-wrap>
+				<md-button ng-click="emailC.gerenciar()">Gerenciar e-mail</md-button>
+			</section>
+			<!--<section layout="column" layout-align="center center" layout-wrap>
+				<md-button ng-click="emailC.enviar()">Enviar e-mail</md-button>
+			</section>-->
+		</div>
 	</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 ﻿(function () {
 	'use strict';
 
-	angular.module('app', ['ngMaterial', 'md.data.table', 'app.MainController']);
+	angular.module('app', ['ngMaterial', 'ngAnimate', 'ngAria', 'ngMessages', 'md.data.table', 'mdPickers', 'app.MainController', 'app.EmailController']);
 })();

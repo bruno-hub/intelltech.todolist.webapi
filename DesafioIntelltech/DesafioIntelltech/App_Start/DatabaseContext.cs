@@ -15,6 +15,7 @@ namespace DesafioIntelltech.App_Start
 		}
 
 		public DbSet<Atividade> Atividade { get; set; }
+		public DbSet<Email> Email { get; set; }
 	}
 
 }

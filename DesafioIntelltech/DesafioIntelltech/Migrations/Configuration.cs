@@ -19,6 +19,7 @@ namespace DesafioIntelltech.Migrations
 			context.Atividade.AddOrUpdate(new Atividade() { Id = 2, Titulo = "Pensar em C#", Descricao = "Parar de confundir com Java", DataHora = DateTimeOffset.UtcNow });
 			context.Atividade.AddOrUpdate(new Atividade() { Id = 3, Titulo = "Ir almoçar", Descricao = "Comer um croasonho", DataHora = DateTimeOffset.UtcNow });
 
+			context.Email.AddOrUpdate(new Email() { Id = 1, StrEmail = "matheusmarquesm31@gmail.com", DataHora = (new DateTimeOffset(2017, 03, 03, 11, 00, 00, TimeSpan.Zero))});
 		}
 	}
 }
