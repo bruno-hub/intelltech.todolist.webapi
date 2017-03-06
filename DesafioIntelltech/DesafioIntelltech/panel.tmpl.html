@@ -6,48 +6,29 @@
 	</md-toolbar>
 
 	<div class="demo-dialog-content">
-		<md-table-container>
-			<form>
-				<table md-table>
-					<tr md-row>
-						<td md-cell>Título:</td>
-						<td md-cell>
-							<md-input-container md-no-float class="md-block">
-								<input type="text" ng-model="ctrl.atividade.titulo" value="{{ctrl.atividade.titulo}}" />
-							</md-input-container>
-						</td>
-					</tr>
-					<tr md-row>
-						<td md-cell>Descrição:</td>
-						<td md-cell>
-							<md-input-container md-no-float class="md-block">
-								<input type="text" ng-model="ctrl.atividade.descricao" value="{{ctrl.atividade.descricao}}" />
-							</md-input-container>
-						</td>
-					</tr>
-					<tr md-row>
-						<td md-cell>Data:</td>
-						<td md-cell>
-							<md-input-container md-no-float class="md-block">
-								<mdp-date-picker mdp-placeholder="Data" ng-model="ctrl.atividade.data" value="{{ctrl.atividade.data}}" />
-							</md-input-container>
-						</td>
-					</tr>
-					<tr md-row>
-						<td md-cell>Hora:</td>
-						<td md-cell>
-							<md-input-container md-no-float class="md-block">
-								<mdp-time-picker mdp-placeholder="Hora" ng-model="ctrl.atividade.hora" value="{{ctrl.atividade.hora}}" />
-							</md-input-container>
-						</td>
-					</tr>
-					<!--<tr md-row>
-				<td md-cell>Situação</td>
-				<td md-cell></td>
-			</tr>-->
-				</table>
-			</form>
-		</md-table-container>
+		<form>
+			<md-input-container md-no-float class="md-block">
+				<label>Título</label>
+				<input type="text" ng-model="ctrl.atividade.titulo" value="{{ctrl.atividade.titulo}}" />
+			</md-input-container>
+			<md-input-container md-no-float class="md-block">
+				<label>Descrição</label>
+				<input type="text" ng-model="ctrl.atividade.descricao" value="{{ctrl.atividade.descricao}}" />
+			</md-input-container>
+			<md-input-container md-no-float class="md-block">
+				<label>Data:</label>
+				<mdp-date-picker mdp-placeholder="Data" ng-model="ctrl.atividade.data" value="{{ctrl.atividade.data}}" />
+			</md-input-container>
+			<md-input-container md-no-float class="md-block">
+				<label>Hora:</label>
+				<mdp-time-picker mdp-placeholder="Hora" ng-model="ctrl.atividade.hora" value="{{ctrl.atividade.hora}}" />
+			</md-input-container>
+			<!--
+			<md-input-container md-no-float class="md-block">
+				<label>Situação</label>
+			</md-input-container>
+			-->
+		</form>
 	</div>
 
 	<div layout="row" class="demo-dialog-button">

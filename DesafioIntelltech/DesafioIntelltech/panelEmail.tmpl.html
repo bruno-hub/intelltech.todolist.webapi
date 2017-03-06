@@ -5,55 +5,23 @@
 		</div>
 	</md-toolbar>
 
-	<div class="demo-dialog-content">
-		<md-table-container>
+	<md-content layout-padding>
+		<div class="demo-dialog-content">
 			<form>
-				<table md-table>
-					<tr md-row>
-						<td md-cell>E-mail:</td>
-						<td md-cell>
-							<md-input-container md-no-float class="md-block">
-								<input type="text" value="{{ctrl.email.strEmail}}" disabled />
-							</md-input-container>
-						</td>
-					</tr>
-					<tr md-row>
-						<td md-cell>Data:</td>
-						<td md-cell>
+				<div layout-gt-xs="column">
+					<md-input-container md-no-float class="md-block">
+						<label>E-mail:</label>
+						<input type="text" value="{{ctrl.email.strEmail}}" disabled />
+					</md-input-container>
 
-							<div class="container">
-								<div class="row">
-									<div class='col-sm-6'>
-										<div class="form-group">
-											<div class='input-group date' id='datetimepicker1'>
-												<input type='text' class="form-control" />
-												<span class="input-group-addon">
-													<span class="glyphicon glyphicon-calendar"></span>
-												</span>
-											</div>
-										</div>
-									</div>
-									<script type="text/javascript">
-										$(function () {
-											$('#datetimepicker1').datetimepicker();
-										});
-									</script>
-								</div>
-							</div>
-
-							<md-input-container md-no-float class="md-block">
-								<md-datepicker ng-model="ctrl.email.dataHora" value="{{ctrl.email.dataHora}}" />
-							</md-input-container>
-						</td>
-					</tr>
-					<!--<tr md-row>
-				<td md-cell>Situação</td>
-				<td md-cell></td>
-			</tr>-->
-				</table>
+					<md-input-container md-no-float class="md-block">
+						<label>Data e Hora:</label>
+						<md-datepicker ng-model="ctrl.email.dataHora" value="{{ctrl.email.dataHora}}" />
+					</md-input-container>
+				</div>
 			</form>
-		</md-table-container>
-	</div>
+		</div>
+	</md-content>
 
 	<div layout="row" class="demo-dialog-button">
 		<md-button md-autofocus class="md-raised" ng-click="ctrl.enviar()">
