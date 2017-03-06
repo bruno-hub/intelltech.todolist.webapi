@@ -95,7 +95,7 @@ angular.module('app.MainController', [])
 
 		PanelDialogCtrl.prototype.salvar = function () {
 			var atividade = PanelDialogCtrl.prototype.atividade;
-
+			console.log(atividade.titulo);
 			if (atividade.titulo == "") {
 				alert("Título inválido");
 				return false;

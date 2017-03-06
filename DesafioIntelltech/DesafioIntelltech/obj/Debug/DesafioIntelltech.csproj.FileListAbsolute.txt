@@ -59,4 +59,3 @@ C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioInt
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.Migrations.Initial.resources
 C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.csproj.GenerateResource.Cache
-C:\Users\Bruno\Desktop\Projetos IntellTech\intelltech.todolist.webapi\DesafioIntelltech\DesafioIntelltech\obj\Debug\DesafioIntelltech.csprojResolveAssemblyReference.cache
