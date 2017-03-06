@@ -5,38 +5,37 @@
 		</div>
 	</md-toolbar>
 
-	<div class="demo-dialog-content">
-		<form>
+	<form name="activityForm" novalidate>
+		<div class="demo-dialog-content">
 			<md-input-container md-no-float class="md-block">
 				<label>Título</label>
-				<input type="text" ng-model="ctrl.atividade.titulo" value="{{ctrl.atividade.titulo}}" />
+				<input required type="text" name="titulo" ng-model="ctrl.atividade.titulo" value="{{ctrl.atividade.titulo}}" />
 			</md-input-container>
 			<md-input-container md-no-float class="md-block">
 				<label>Descrição</label>
-				<input type="text" ng-model="ctrl.atividade.descricao" value="{{ctrl.atividade.descricao}}" />
+				<input required type="text" name="descricao" ng-model="ctrl.atividade.descricao" value="{{ctrl.atividade.descricao}}" />
 			</md-input-container>
 			<md-input-container md-no-float class="md-block">
-				<label>Data:</label>
-				<mdp-date-picker mdp-placeholder="Data" ng-model="ctrl.atividade.data" value="{{ctrl.atividade.data}}" />
+				<label>Data</label>
+				<input required time="false" date="true" name="data" mdc-datetime-picker="" type="text" id="date"
+					   ng-model="ctrl.atividade.data" format="DD/MM/YYYY" min-date="minDate" max-date="maxDate" class="md-input"
+					   readonly="readonly" value="{{ctrl.atividade.data}}" />
 			</md-input-container>
 			<md-input-container md-no-float class="md-block">
-				<label>Hora:</label>
-				<mdp-time-picker mdp-placeholder="Hora" ng-model="ctrl.atividade.hora" value="{{ctrl.atividade.hora}}" />
+				<label>Hora</label>
+				<input required mdc-datetime-picker="" name="hora" date="false" time="true" type="text" id="time" short-time="true"
+					   min-date="minDate" format="hh:mm a" ng-model="ctrl.atividade.hora" class="md-input"
+					   readonly="readonly" value="{{ctrl.atividade.hora}}" />
 			</md-input-container>
-			<!--
-			<md-input-container md-no-float class="md-block">
-				<label>Situação</label>
-			</md-input-container>
-			-->
-		</form>
-	</div>
+		</div>
 
-	<div layout="row" class="demo-dialog-button">
-		<md-button md-autofocus class="md-raised" ng-click="ctrl.salvar()">
-			Salvar
-		</md-button>
-		<md-button md-autofocus class="md-primary" ng-click="ctrl.closeDialog()">
-			Fechar
-		</md-button>
-	</div>
+		<div layout="row" layout-align="center center" class="demo-dialog-button">
+			<md-button md-autofocus class="md-primary" ng-click="ctrl.closeDialog()">
+				Fechar
+			</md-button>
+			<md-button type="submit" md-autofocus class="md-raised" ng-click="ctrl.salvar(activityForm)">
+				Salvar
+			</md-button>
+		</div>
+	</form>
 </div>

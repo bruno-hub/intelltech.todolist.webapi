@@ -8,6 +8,12 @@ angular.module('app.MainController', [])
 
 		//$log.debug('eteste');
 
+		vm.concluirAtividade = function (atividade) {
+			$http.put("/api/atividade/" + atividade.id, atividade).then(function (response) {
+				
+			}, function (response) { });
+		}
+
 		//------------------------------------ Listar
 		vm.atividades = [];
 		vm.todos = todos;
@@ -82,9 +88,7 @@ angular.module('app.MainController', [])
 			this._mdPanelRef = mdPanelRef;
 		}
 
-		PanelDialogCtrl.prototype.closeDialog = function () {
-			var panelRef = this._mdPanelRef;
-				
+		function fecharDialogo(panelRef) {
 			panelRef && panelRef.close().then(function () {
 				angular.element(document.querySelector('.demo-dialog-open-button')).focus();
 				panelRef.destroy();
@@ -93,41 +97,44 @@ angular.module('app.MainController', [])
 			vm.atividade = {};
 		}
 
-		PanelDialogCtrl.prototype.salvar = function () {
+		PanelDialogCtrl.prototype.closeDialog = function () {
+			var panelRef = this._mdPanelRef;
+			
+			fecharDialogo(panelRef);
+		}
+
+		PanelDialogCtrl.prototype.salvar = function (form) {
 			var atividade = PanelDialogCtrl.prototype.atividade;
-			console.log(atividade.titulo);
-			if (atividade.titulo == "") {
-				alert("Título inválido");
-				return false;
-			} else if (atividade.descricao == "") {
-				alert("Descrição inválida");
-				return false;
+
+			if (!form.$valid) {
+				return;
 			} else {
+				atividade.dataHora = new Date();
+
+				//Juntando os objetos de Data (Date) e Hora (Time) num só de DataHora (DateTime)
+				atividade.dataHora.setDate(atividade.data.getDate());
+				atividade.dataHora.setMonth(atividade.data.getMonth());
+				atividade.dataHora.setFullYear(atividade.data.getFullYear());
+
+				atividade.dataHora.setHours(atividade.hora.getHours());
+				atividade.dataHora.setMinutes(atividade.hora.getMinutes());
+				atividade.dataHora.setSeconds(0);
+
 				var panelRef = this._mdPanelRef;
 
 				if (vm.acao == "Cadastro") {
 					$http.post("/api/atividade", atividade).then(function (response) {
-						panelRef && panelRef.close().then(function () {
-							angular.element(document.querySelector('.demo-dialog-open-button')).focus();
-							panelRef.destroy();
-						});
+						fecharDialogo(panelRef);
 
 						todos();
-					}, function (response) { });
-				} else {
+					}, function (response) {});
+				} else if(vm.acao == "Edição"){
 					$http.put("/api/atividade/" + atividade.id, atividade).then(function (response) {
-						panelRef && panelRef.close().then(function () {
-							angular.element(document.querySelector('.demo-dialog-open-button')).focus();
-							panelRef.destroy();
-						});
+						fecharDialogo(panelRef);
 
 						todos();
-					}, function (response) {
-
-					});
+					}, function (response) {});
 				}
-
-				vm.atividade = {};
 			}
 		}
 
@@ -142,34 +149,6 @@ angular.module('app.MainController', [])
 		}
 
 		//----------------------------------------
-
-		vm.doSecondaryAction = function (event) {
-			$mdDialog.show(
-				$mdDialog.alert()
-				.title('Ação Secundária')
-				.textContent('Ações secundárias podem ser usadas em ações de um clique')
-				.ariaLabel('Demo de clique secundário')
-				.ok('Bacana!')
-				.targetEvent(event)
-			);
-		};
-
-		vm.user = null;
-		vm.users = null;
-
-		vm.loadUsers = function () {
-
-			// Use timeout to simulate a 650ms request.
-			return $timeout(function () {
-
-				vm.users = vm.users || [
-					{ id: 1, name: 'Não iniciada' },
-					{ id: 2, name: 'Em andamento' },
-					{ id: 3, name: 'Concluída' },
-				];
-
-			}, 650);
-		};
 
 		//Métodos da primeira execução
 		todos();

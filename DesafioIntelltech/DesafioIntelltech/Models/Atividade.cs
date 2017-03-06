@@ -13,10 +13,9 @@ namespace DesafioIntelltech.Models
 		public long Id { get; set; }
 		public string Titulo { get; set; }
 		public string Descricao { get; set; }
-
 		[DataType(DataType.DateTime)]
 		public DateTimeOffset DataHora { get; set; }
-
+		public Boolean Concluida { get; set; }
 
 		//private int PosSituacao = 0;
 		//public static string[] Situacao = { "Não iniciada", "Em andamento", "Concluída" };

@@ -5,30 +5,35 @@
 		</div>
 	</md-toolbar>
 
-	<md-content layout-padding>
-		<div class="demo-dialog-content">
-			<form>
-				<div layout-gt-xs="column">
-					<md-input-container md-no-float class="md-block">
-						<label>E-mail:</label>
-						<input type="text" value="{{ctrl.email.strEmail}}" disabled />
-					</md-input-container>
-
-					<md-input-container md-no-float class="md-block">
-						<label>Data e Hora:</label>
-						<md-datepicker ng-model="ctrl.email.dataHora" value="{{ctrl.email.dataHora}}" />
-					</md-input-container>
-				</div>
-			</form>
-		</div>
-	</md-content>
+	<div class="demo-dialog-content">
+		<form>
+			<div layout-gt-xs="column">
+				<md-input-container md-no-float class="md-block">
+					<label>E-mail</label>
+					<input required type="text" value="{{ctrl.email.strEmail}}" disabled />
+				</md-input-container>
+				<md-input-container md-no-float class="md-block">
+					<label>Data</label>
+					<input required time="false" date="true" mdc-datetime-picker="" type="text" id="date"
+							ng-model="ctrl.email.data" format="DD/MM/YYYY" min-date="minDate" max-date="maxDate" class="md-input"
+							readonly="readonly" value="{{ctrl.email.data}}" />
+				</md-input-container>
+				<md-input-container md-no-float class="md-block">
+					<label>Hora</label>
+					<input required mdc-datetime-picker="" date="false" time="true" type="text" id="time" short-time="true"
+							min-date="minDate" format="hh:mm a" ng-model="ctrl.email.hora" class="md-input"
+							readonly="readonly" value="{{ctrl.email.hora}}" />
+				</md-input-container>
+			</div>
+		</form>
+	</div>
 
 	<div layout="row" class="demo-dialog-button">
-		<md-button md-autofocus class="md-raised" ng-click="ctrl.enviar()">
-			Enviar e-mail
-		</md-button>
 		<md-button md-autofocus class="md-primary" ng-click="ctrl.closeDialog()">
 			Fechar
+		</md-button>
+		<md-button md-autofocus class="md-raised" ng-click="ctrl.enviar()">
+			Enviar e-mail
 		</md-button>
 	</div>
 </div>

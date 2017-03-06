@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -64,12 +64,12 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Google.Protobuf, Version=3.0.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.0.0\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.2.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.2.0\lib\net45\Google.Protobuf.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -96,8 +96,8 @@
       <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -121,6 +121,10 @@
       <HintPath>..\packages\MySql.ConnectorNET.Entity.6.8.3.2\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Npgsql, Version=3.2.1.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.3.2.1\lib\net451\Npgsql.dll</HintPath>
       <Private>True</Private>
@@ -131,6 +135,10 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
@@ -150,6 +158,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -157,20 +173,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -674,188 +676,6 @@
     <Content Include="Resources\bower_components\angular\angular.js" />
     <Content Include="Resources\bower_components\angular\angular.min.js" />
     <Content Include="Resources\bower_components\angular\index.js" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap.css" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap.min.css" />
-    <Content Include="Resources\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Resources\bower_components\bootstrap\dist\js\bootstrap.js" />
-    <Content Include="Resources\bower_components\bootstrap\dist\js\bootstrap.min.js" />
-    <Content Include="Resources\bower_components\bootstrap\dist\js\npm.js" />
-    <Content Include="Resources\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Resources\bower_components\bootstrap\Gruntfile.js" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\bs-commonjs-generator.js" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\bs-raw-files-generator.js" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\change-version.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\affix.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\alert.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\button.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\carousel.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\collapse.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\dropdown.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\modal.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\popover.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\scrollspy.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\tab.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\tooltip.js" />
-    <Content Include="Resources\bower_components\bootstrap\js\transition.js" />
-    <Content Include="Resources\bower_components\bootstrap\package.js" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\build\css\bootstrap-datetimepicker-standalone.css" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\build\css\bootstrap-datetimepicker.css" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\build\css\bootstrap-datetimepicker.min.css" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\build\js\bootstrap-datetimepicker.min.js" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\android-chrome-144x144.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\android-chrome-192x192.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\android-chrome-36x36.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\android-chrome-48x48.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\android-chrome-72x72.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\android-chrome-96x96.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-114x114.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-120x120.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-144x144.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-152x152.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-180x180.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-57x57.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-60x60.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-72x72.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-76x76.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon-precomposed.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\apple-touch-icon.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\base.html" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\browserconfig.xml" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\content.html" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\css\base.css" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\css\prettify-1.0.css" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\favicon-16x16.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\favicon-32x32.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\favicon-96x96.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\favicon.ico" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\js\base.js" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\js\prettify-1.0.min.js" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\mstile-144x144.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\mstile-150x150.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\mstile-310x150.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\mstile-310x310.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\mstile-70x70.png" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\nav.html" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\toc.html" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\Gruntfile.js" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\js\bootstrap-datetimepicker.js" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\nuget\NuGet.exe" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\tasks\bump_version.js" />
-    <Content Include="Resources\bower_components\jquery\AUTHORS.txt" />
-    <Content Include="Resources\bower_components\jquery\dist\core.js" />
-    <Content Include="Resources\bower_components\jquery\dist\jquery.js" />
-    <Content Include="Resources\bower_components\jquery\dist\jquery.min.js" />
-    <Content Include="Resources\bower_components\jquery\dist\jquery.slim.js" />
-    <Content Include="Resources\bower_components\jquery\dist\jquery.slim.min.js" />
-    <Content Include="Resources\bower_components\jquery\external\sizzle\dist\sizzle.js" />
-    <Content Include="Resources\bower_components\jquery\external\sizzle\dist\sizzle.min.js" />
-    <Content Include="Resources\bower_components\jquery\external\sizzle\LICENSE.txt" />
-    <Content Include="Resources\bower_components\jquery\LICENSE.txt" />
-    <Content Include="Resources\bower_components\jquery\src\ajax.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\jsonp.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\load.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\parseXML.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\script.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\var\location.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\var\nonce.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\var\rquery.js" />
-    <Content Include="Resources\bower_components\jquery\src\ajax\xhr.js" />
-    <Content Include="Resources\bower_components\jquery\src\attributes.js" />
-    <Content Include="Resources\bower_components\jquery\src\attributes\attr.js" />
-    <Content Include="Resources\bower_components\jquery\src\attributes\classes.js" />
-    <Content Include="Resources\bower_components\jquery\src\attributes\prop.js" />
-    <Content Include="Resources\bower_components\jquery\src\attributes\support.js" />
-    <Content Include="Resources\bower_components\jquery\src\attributes\val.js" />
-    <Content Include="Resources\bower_components\jquery\src\callbacks.js" />
-    <Content Include="Resources\bower_components\jquery\src\core.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\access.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\DOMEval.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\init.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\parseHTML.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\ready-no-deferred.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\ready.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\readyException.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\stripAndCollapse.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\support.js" />
-    <Content Include="Resources\bower_components\jquery\src\core\var\rsingleTag.js" />
-    <Content Include="Resources\bower_components\jquery\src\css.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\addGetHookIf.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\adjustCSS.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\curCSS.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\showHide.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\support.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\var\cssExpand.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\var\getStyles.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\var\isHiddenWithinTree.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\var\rmargin.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\var\rnumnonpx.js" />
-    <Content Include="Resources\bower_components\jquery\src\css\var\swap.js" />
-    <Content Include="Resources\bower_components\jquery\src\data.js" />
-    <Content Include="Resources\bower_components\jquery\src\data\Data.js" />
-    <Content Include="Resources\bower_components\jquery\src\data\var\acceptData.js" />
-    <Content Include="Resources\bower_components\jquery\src\data\var\dataPriv.js" />
-    <Content Include="Resources\bower_components\jquery\src\data\var\dataUser.js" />
-    <Content Include="Resources\bower_components\jquery\src\deferred.js" />
-    <Content Include="Resources\bower_components\jquery\src\deferred\exceptionHook.js" />
-    <Content Include="Resources\bower_components\jquery\src\deprecated.js" />
-    <Content Include="Resources\bower_components\jquery\src\dimensions.js" />
-    <Content Include="Resources\bower_components\jquery\src\effects.js" />
-    <Content Include="Resources\bower_components\jquery\src\effects\animatedSelector.js" />
-    <Content Include="Resources\bower_components\jquery\src\effects\Tween.js" />
-    <Content Include="Resources\bower_components\jquery\src\event.js" />
-    <Content Include="Resources\bower_components\jquery\src\event\ajax.js" />
-    <Content Include="Resources\bower_components\jquery\src\event\alias.js" />
-    <Content Include="Resources\bower_components\jquery\src\event\focusin.js" />
-    <Content Include="Resources\bower_components\jquery\src\event\support.js" />
-    <Content Include="Resources\bower_components\jquery\src\event\trigger.js" />
-    <Content Include="Resources\bower_components\jquery\src\exports\amd.js" />
-    <Content Include="Resources\bower_components\jquery\src\exports\global.js" />
-    <Content Include="Resources\bower_components\jquery\src\jquery.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\buildFragment.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\getAll.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\setGlobalEval.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\support.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\var\rcheckableType.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\var\rscriptType.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\var\rtagName.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\wrapMap.js" />
-    <Content Include="Resources\bower_components\jquery\src\manipulation\_evalUrl.js" />
-    <Content Include="Resources\bower_components\jquery\src\offset.js" />
-    <Content Include="Resources\bower_components\jquery\src\queue.js" />
-    <Content Include="Resources\bower_components\jquery\src\queue\delay.js" />
-    <Content Include="Resources\bower_components\jquery\src\selector-native.js" />
-    <Content Include="Resources\bower_components\jquery\src\selector-sizzle.js" />
-    <Content Include="Resources\bower_components\jquery\src\selector.js" />
-    <Content Include="Resources\bower_components\jquery\src\serialize.js" />
-    <Content Include="Resources\bower_components\jquery\src\traversing.js" />
-    <Content Include="Resources\bower_components\jquery\src\traversing\findFilter.js" />
-    <Content Include="Resources\bower_components\jquery\src\traversing\var\dir.js" />
-    <Content Include="Resources\bower_components\jquery\src\traversing\var\rneedsContext.js" />
-    <Content Include="Resources\bower_components\jquery\src\traversing\var\siblings.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\arr.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\class2type.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\concat.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\document.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\documentElement.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\fnToString.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\getProto.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\hasOwn.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\indexOf.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\ObjectFunctionString.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\pnum.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\push.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\rcssNum.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\rnothtmlwhite.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\slice.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\support.js" />
-    <Content Include="Resources\bower_components\jquery\src\var\toString.js" />
-    <Content Include="Resources\bower_components\jquery\src\wrap.js" />
     <Content Include="Resources\bower_components\moment\locale\af.js" />
     <Content Include="Resources\bower_components\moment\locale\ar-dz.js" />
     <Content Include="Resources\bower_components\moment\locale\ar-ly.js" />
@@ -1184,6 +1004,16 @@
     <Content Include="Resources\bower_components\moment\templates\default.js" />
     <Content Include="Resources\bower_components\moment\templates\locale-header.js" />
     <Content Include="Resources\bower_components\moment\templates\test-header.js" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\.gitignore" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\beautifier.js" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\css\material-datetimepicker.css" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\dist\angular-material-datetimepicker.min.js" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\dist\material-datetimepicker.min.css" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\favicon.png" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\gulpfile.js" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\index.html" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\js\angular-material-datetimepicker.js" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\js\demo.js" />
     <Content Include="Resources\js\app.js" />
     <Content Include="Resources\js\email.controller.js" />
     <Content Include="Resources\js\main.controller.js" />
@@ -1303,149 +1133,18 @@
     <Content Include="Resources\bower_components\angular-material-data-table\README.md" />
     <Content Include="Resources\bower.json" />
     <Content Include="npm-debug.log" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\.bower.json" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\bower.json" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\component.json" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\composer.json" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\CONTRIBUTING.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\ChangeLog.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\ContributorsGuide.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\Events.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\Extras.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\FAQ.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\Functions.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\index.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\Installing.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\Options.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\theme\manifest.json" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\Version 4 Changelog.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\docs\Version 4 Contributors guide.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\LICENSE" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\mkdocs.yml" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\package.json" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\README.md" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\less\bootstrap-datetimepicker-build.less" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\less\_bootstrap-datetimepicker.less" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\nuget\Bootstrap.v3.Datetimepicker.CSS.nuspec" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\nuget\Bootstrap.v3.Datetimepicker.nuspec" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\nuget\install.ps1" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\sass\bootstrap-datetimepicker-build.scss" />
-    <Content Include="Resources\bower_components\eonasdan-bootstrap-datetimepicker\src\sass\_bootstrap-datetimepicker.scss" />
-    <Content Include="Resources\bower_components\jquery\.bower.json" />
-    <Content Include="Resources\bower_components\jquery\bower.json" />
-    <Content Include="Resources\bower_components\jquery\dist\jquery.min.map" />
-    <Content Include="Resources\bower_components\jquery\dist\jquery.slim.min.map" />
-    <Content Include="Resources\bower_components\jquery\external\sizzle\dist\sizzle.min.map" />
-    <Content Include="Resources\bower_components\jquery\README.md" />
-    <Content Include="Resources\bower_components\jquery\src\.eslintrc.json" />
     <Content Include="Resources\bower_components\moment\.bower.json" />
     <Content Include="Resources\bower_components\moment\bower.json" />
     <Content Include="Resources\bower_components\moment\CHANGELOG.md" />
     <Content Include="Resources\bower_components\moment\LICENSE" />
     <Content Include="Resources\bower_components\moment\README.md" />
-    <Content Include="Resources\bower_components\bootstrap\.bower.json" />
-    <Content Include="Resources\bower_components\bootstrap\bower.json" />
-    <Content Include="Resources\bower_components\bootstrap\CHANGELOG.md" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap-theme.css.map" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap.css.map" />
-    <Content Include="Resources\bower_components\bootstrap\dist\css\bootstrap.min.css.map" />
-    <Content Include="Resources\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Resources\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Resources\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Resources\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Resources\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Resources\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Resources\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Resources\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Resources\bower_components\bootstrap\Gemfile" />
-    <Content Include="Resources\bower_components\bootstrap\Gemfile.lock" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\.jshintrc" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\configBridge.json" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\npm-shrinkwrap.json" />
-    <Content Include="Resources\bower_components\bootstrap\grunt\sauce_browsers.yml" />
-    <Content Include="Resources\bower_components\bootstrap\ISSUE_TEMPLATE.md" />
-    <Content Include="Resources\bower_components\bootstrap\js\.jscsrc" />
-    <Content Include="Resources\bower_components\bootstrap\js\.jshintrc" />
-    <Content Include="Resources\bower_components\bootstrap\less\.csscomb.json" />
-    <Content Include="Resources\bower_components\bootstrap\less\.csslintrc" />
-    <Content Include="Resources\bower_components\bootstrap\less\alerts.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\badges.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\bootstrap.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\breadcrumbs.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\button-groups.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\buttons.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\carousel.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\close.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\code.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\component-animations.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\dropdowns.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\forms.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\glyphicons.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\grid.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\input-groups.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\jumbotron.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\labels.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\list-group.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\media.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\alerts.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\background-variant.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\border-radius.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\buttons.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\center-block.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\clearfix.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\forms.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\gradients.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\grid-framework.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\grid.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\hide-text.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\image.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\labels.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\list-group.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\nav-divider.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\nav-vertical-align.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\opacity.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\pagination.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\panels.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\progress-bar.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\reset-filter.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\reset-text.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\resize.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\responsive-visibility.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\size.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\tab-focus.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\table-row.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\text-emphasis.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\text-overflow.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\mixins\vendor-prefixes.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\modals.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\navbar.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\navs.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\normalize.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\pager.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\pagination.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\panels.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\popovers.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\print.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\progress-bars.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\responsive-embed.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\responsive-utilities.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\scaffolding.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\tables.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\theme.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\thumbnails.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\tooltip.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\type.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\utilities.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\variables.less" />
-    <Content Include="Resources\bower_components\bootstrap\less\wells.less" />
-    <Content Include="Resources\bower_components\bootstrap\LICENSE" />
-    <Content Include="Resources\bower_components\bootstrap\nuget\bootstrap.less.nuspec" />
-    <Content Include="Resources\bower_components\bootstrap\nuget\bootstrap.nuspec" />
-    <Content Include="Resources\bower_components\bootstrap\nuget\MyGet.ps1" />
-    <Content Include="Resources\bower_components\bootstrap\package.json" />
-    <Content Include="Resources\bower_components\bootstrap\README.md" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\.bower.json" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\bower.json" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\dist\angular-material-datetimepicker.min.js.map" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\LICENSE.md" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\package.json" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\README.md" />
+    <Content Include="Resources\bower_components\ng-material-datetimepicker\yarn.lock" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1462,10 +1161,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Resources\bower_components\moment\moment.d.ts" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <TypeScriptCompile Include="Resources\bower_components\moment\moment.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1497,8 +1196,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
