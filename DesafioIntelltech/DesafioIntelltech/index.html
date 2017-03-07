@@ -68,6 +68,7 @@
 					<th md-column>Descrição</th>
 					<th md-column>Data e Hora</th>
 					<th md-column>Situação</th>
+					<th md-column>GUID</th>
 					<th md-column>Opções</th>
 				</tr>
 			</thead>
@@ -85,6 +86,7 @@
 							Concluída
 						</md-checkbox>
 					</td>
+					<td md-cell>{{ atividade.guid }}</td>
 					<td md-cell>
 						<md-menu>
 							<md-button aria-label="Opções" class="md-icon-button" ng-click="$mdMenu.open($event)">
@@ -106,12 +108,12 @@
 		</md-table-container>
 
 		<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-			<md-button class="md-primary md-fab" style="font-size: larger;" ng-click="main.cadastrar()">+</md-button>
+			<md-button class="md-primary md-raised" ng-click="main.cadastrar()">Nova</md-button>
 		</section>
 
 		<div ng-controller="EmailController as emailC">
 			<section layout="column" layout-align="center center" layout-wrap>
-				<md-button ng-click="emailC.gerenciar()">Gerenciar e-mail</md-button>
+				<md-button class="md-raised" ng-click="emailC.gerenciar()">Gerenciar e-mail</md-button>
 			</section>
 		</div>
 	</div>

@@ -36,7 +36,7 @@ namespace DesafioIntelltech.Controllers
 			{
 				return NotFound();
 			}
-
+			//new Guid
 			return Ok(atividade);
 		}
 
@@ -117,6 +117,23 @@ namespace DesafioIntelltech.Controllers
 		public IHttpActionResult DeleteAtividade(long id)
 		{
 			Atividade atividade = db.Atividade.Find(id);
+			if (atividade == null)
+			{
+				return NotFound();
+			}
+
+			db.Atividade.Remove(atividade);
+			db.SaveChanges();
+
+			return Ok(atividade);
+		}
+
+		[HttpDelete]
+		[Route("delete/{titulo}")]
+		// DELETE: api/Atividade/delete/{titulo}
+		public IHttpActionResult DeleteAtividade(string titulo)
+		{
+			Atividade atividade = db.Atividade.Find(titulo);
 			if (atividade == null)
 			{
 				return NotFound();

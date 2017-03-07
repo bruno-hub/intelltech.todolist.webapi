@@ -47,8 +47,12 @@ namespace DesafioIntelltech.Controllers
 
 			string mensagem = "";
 			foreach (Atividade a in email.Atividades){
-				mensagem += "Atividade: " + a.Titulo + ": " + a.Descricao + "<br/>";
+				if(!a.Concluida)
+					mensagem += "Atividade: " + a.Titulo + ": " + a.Descricao + "<br/>";
 			}
+
+			if (mensagem.Equals(""))
+				mensagem = "Você não possui atividades para hoje.";
 
 			mail.Body = mensagem;
 

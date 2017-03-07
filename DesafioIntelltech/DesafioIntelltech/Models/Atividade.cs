@@ -16,6 +16,12 @@ namespace DesafioIntelltech.Models
 		[DataType(DataType.DateTime)]
 		public DateTimeOffset DataHora { get; set; }
 		public Boolean Concluida { get; set; }
+		public string GUID { get; set; }
+
+		public Atividade()
+		{
+			GUID = Guid.NewGuid().ToString();
+		}
 
 		//private int PosSituacao = 0;
 		//public static string[] Situacao = { "Não iniciada", "Em andamento", "Concluída" };
