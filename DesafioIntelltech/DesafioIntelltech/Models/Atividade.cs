@@ -15,7 +15,7 @@ namespace DesafioIntelltech.Models
 		public string Descricao { get; set; }
 		[DataType(DataType.DateTime)]
 		public DateTimeOffset DataHora { get; set; }
-		public Boolean Concluida { get; set; }
+		public bool Concluida { get; set; }
 		public string GUID { get; set; }
 
 		public Atividade()
